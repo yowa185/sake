@@ -1,4 +1,4 @@
- @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.css');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.css');
 
 * {
   margin: 0;
@@ -10,16 +10,17 @@ body {
   font-family: 'Pretendard', sans-serif;
   background: #e7e6db;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
     min-height: 100vh;
-    /* 화면 높이를 최소 100% 확보 */
     margin: 0;
+    padding: 0;
 }
 
-/* ------------------ 헤더 ------------------ */
+/* ------------------ 헤더 (100px -> 80px 축소) ------------------ */
 
 .header {
-  height: 100px;
+  height: 80px;
+    /* 80% 비율 보정 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,57 +28,41 @@ body {
     background: #e7e6db;
 }
 
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .logo img {
-  width: 200px;
+  width: 160px;
+    /* 200px -> 160px */
 }
 
 .top-line {
   border: 0;
-  height: 1.5px;
+  height: 1px;
   background: #1d3002;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 95%;
 }
 
-/* ------------------ 히어로 ------------------ */
-
-.hero,
-.search-section {
-  width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 핵심: 헤더 높이(100px)를 제외한 나머지 화면을 꽉 채움 */
-    height: calc(100vh - 100px);
-}
+/* ------------------ 히어로 (높이 및 간격 보정) ------------------ */
 
 .hero {
   position: relative;
-  height: 600px;
+  width: 100%;
+    height: calc(100vh - 80px);
+    /* 헤더 높이에 맞춤 */
   background: url("https://images.unsplash.com/photo-1528534696553-76e24393cde5?q=80&w=1859&auto=format&fit=crop") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  margin-top: 30px;
-  padding-top: 280px;
-  height: calc(100vh - 100px);
+  padding-top: 150px;
+    /* 280px -> 위치 보정 */
 }
 
-/* 어둡게 만드는 오버레이 */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  /* 숫자 높일수록 더 어두워짐 */
 }
 
 .hero-text {
@@ -86,13 +71,16 @@ body {
 }
 
 .hero h1 {
-  font-size: 60px;
+  font-size: 48px;
+    /* 60px -> 48px */
   font-weight: 800;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+    /* 70px -> 40px */
 }
 
 .hero p {
-  font-size: 14px;
+  font-size: 13px;
+    /* 14px -> 13px */
   line-height: 1.6;
 }
 
@@ -100,87 +88,85 @@ body {
   border: 0;
   height: 1px;
   background: #1d3002;
-  margin: 30px auto 0 auto;
-  align-items: center;
+  margin: 20px auto 0 auto;
   width: 95%;
 }
 
-/* ------------------ 검색 영역 ------------------ */
+/* ------------------ 검색 영역 (전등 위치 보정 핵심) ------------------ */
+
+/* ------------------ 검색 영역 (구조 고정) ------------------ */
 
 .search-section {
   position: relative;
-  padding: 80px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -250px;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    flex: 1;
+      margin-top: 120px;
+    
+      min-height: 400px;
 }
 
-/* 등 이미지 */
+/* ⭐ 등 이미지 (위치 절대 고정) */
 .lantern {
   position: absolute;
-  width: 150px;
-  margin-top: -180px;
+  width: 120px;
+    /* margin-top 대신 top을 사용하여 검색 박스 변화에 영향을 받지 않음 */
+    top: 50%;
+    transform: translateY(-50%);
+    /* 세로 중앙 정렬 기준점 잡기 */
+    z-index: 1;
 }
 
-/* 2. 왼쪽 그룹 */
+/* 왼쪽 그룹 좌표 (80% 보정 수치 유지) */
 .lantern.left {
-  left: 20px;
+  left: 40px;
+    margin-top: -100px;
 }
 
 .lantern.left.bottom {
-  left: 140px;
-  z-index: 2;
+  left: 130px;
+    margin-top: -100px;
 }
 
-/* 3. 오른쪽 그룹 */
 .lantern.right {
-  right: 20px;
+  right: 40px;
+    margin-top: -100px;
 }
 
 .lantern.right.bottom {
-  right: 140px;
+  right: 130px;
   z-index: 2;
+margin-top: -100px;
 }
-
-/* 검색 박스 */
 
 .search-box {
   background: #f1f0e4;
-    position: relative;
-    align-self: flex-start;
-    margin-top: 35vh;
-    padding: 30px 30px;
-    border-radius: 30px;
+  position: relative;
+  margin-top: -200px;
+    z-index: 10;
+    padding: 20px 20px;
+    border-radius: 24px;
     text-align: center;
-    width: 40vw;
-    min-width: 500px;
-    max-width: 600px;
+  width: 400px;
     border: 1px solid #dcdbc8;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     font-family: 'LeferiBaseType-Regular', sans-serif;
 }
 
-/* 토글 버튼 */
 .search-toggle {
   background: #e7e6db;
-  padding: 20px 30px;
-  border-radius: 10px;
+  padding: 16px 24px;
+    border-radius: 8px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: 16px;
   border: 1px solid #1d3002;
   color: #333;
-  }
-
-/* 화살표 애니메이션 */
-.arrow {
-  transition: transform 0.3s ease;
 }
 
-/* 드롭다운 기본 닫힘 */
 .search-dropdown {
   max-height: 0;
   overflow: hidden;
@@ -188,54 +174,41 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0px;
 }
 
-/* 열렸을 때 */
 .search-box.active .search-dropdown {
-  max-height: 350px;
-  margin-top: 30px;
+  max-height: 300px;
+    margin-top: 24px;
 }
 
-.search-box.active .arrow {
-  transform: rotate(180deg);
-}
-
-/* 링크 스타일 */
 .search-dropdown a {
   text-decoration: none;
   color: #919191;
-  padding: 15px 0;
+  padding: 12px 0;
   width: 100%;
-  transition: color 0.2s;
-  font-size: clamp(14px, 1.1vw, 18px);
-}
-
-.search-dropdown a:hover {
-  color: #1d3002;
+  font-size: 15px;
 }
 
 .search-dropdown hr {
   border: none;
   border-top: 1px solid #1d3002;
   height: 1px;
-  margin: 15px 0;
+  margin: 12px 0;
   width: 100%;
-  transform: translateY(0.5px);
 }
 
 /* ------------------ 푸터 ------------------ */
 
 .footer {
-  background: #1d3002;
-  padding: 30px 5%;
+background: #1d3002;
+  padding: 24px 5%;
   display: flex;
   color: white;
+  width: 100%;
   margin-top: auto;
-  justify-content: flex-start;
 }
 
 .footer .footer-logo img {
-  width: 150px !important;
+  width: 120px !important;
   height: auto !important;
 }
