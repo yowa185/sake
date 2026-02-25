@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>페어링으로 찾기</title>
+    <link rel="stylesheet" href="guidePairing.css" />
+  </head>
+  <body>
+    <!-- 공통 헤더 -->
+      <header class="header">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Logo_svg/logo1.png" alt="logo">
+          </a>
+        </div>
+      
+        <nav class="nav-bar">
+          <div class="nav-container">
+            <a href="region.html" class="nav-item active">지역별</a>
+            <a href="brand.html" class="nav-item">브랜드별</a>
+            <a href="guide.html" class="nav-item">GUIDE</a>
+          </div>
+        </nav>
+      </header>
+
+    <div class="page-title">
+      <h1>음식 페어링으로 찾기</h1>
+      <p>어울리는 사케 타입을 확인해보세요</p>
+    </div>
+
+    
+    <!-- ✅ 탭 버튼: 버튼만! -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="seafood">해산물</button>
+      <button class="tab-button" data-tab="meat">육류</button>
+      <button class="tab-button" data-tab="fries">튀김요리</button>
+      <button class="tab-button" data-tab="cheese">치즈</button>
+      <button class="tab-button" data-tab="meal">식사류</button>
+    </div>
+    
+    <!-- ✅ 콘텐츠: tabs 밖에! -->
+    <main class="pairing-page">
+      <section class="pairing-intro">
+        <h2 id="pairingTitle"></h2>
+        <p id="pairingDesc"></p>
+      </section>
+    
+      <!-- ✅ 카드 영역: 딱 1개 -->
+      <section class="pairing-results">
+        <h3 class="results-title">추천 사케</h3>
+        <div id="sakeGrid" class="sake-grid"></div>
+      </section>
+    </main>
+    <script src="konomi.js"></script>
+    <script src="konomi.js"></script>
+    <script src="detailedpage.js"></script>
+    <script src="guidePairing.js"></script>
+    </body>
+    
+    </html>

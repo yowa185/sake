@@ -1,0 +1,229 @@
+ @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #e7e6db;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* 화면 높이를 최소 100% 확보 */
+  margin: 0;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 200px;
+  /* 양옆 이미지 너비 조절 */
+  height: 100vh;
+  background-image: url("konomi/pattern.png");
+  background-repeat: repeat-y;
+  /* 세로만 반복 */
+  background-size: contain;
+  z-index: -1;
+}
+
+/* 왼쪽 */
+body::before {
+  left: 0;
+}
+
+/* 오른쪽 */
+body::after {
+  right: 0;
+  transform: scaleX(-1);
+  /* 좌우 반전 (원하면 제거 가능) */
+}
+
+/* =====헤더 영역===== */
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e7e6db;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.nav-bar {
+  width: 100%;
+  border-top: 1.5px solid #1d3002;
+  border-bottom: 1.5px solid #1d3002;
+  background: #e7e6db;
+}
+
+.nav-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+  color: #666;
+  font-family: 'LeferiBaseType-Regular', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+
+  border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:last-child {
+  border-right: none;
+}
+
+.nav-item:first-child {
+  border-left: none;
+  border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:hover {
+  color: #1d3002;
+}
+
+/*========================================*/
+
+/* 상단 제목 */
+.guide-hero {
+  padding: 80px 40px 40px;
+  text-align: center;
+  color: #1d3002;
+  font-family: 'LeferiBaseType-Regular', sans-serif;
+}
+
+.guide-hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* 카드 영역 컨테이너 */
+.guide-section {
+  padding: 60px 40px 100px;
+}
+
+.guide-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  /* 원형 사이의 간격 */
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.guide-card {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 4px solid #acb69c;
+}
+
+.guide-card h2,
+.guide-card h3 {
+  font-size: clamp(20px, 1.8vw, 32px);
+  /* 최소 20px, 최대 32px 사이에서 반응 */
+}
+
+.guide-card:nth-child(1) {
+  background: url('https://images.unsplash.com/photo-1571762450239-f0f047321444?w=900&auto=format&fit=crop&q=60') center/cover no-repeat;
+}
+
+.guide-card:nth-child(2) {
+  background: url('https://images.unsplash.com/photo-1626379907626-2863cc76a526?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+}
+
+.guide-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* 숫자 높일수록 더 어두워짐 */
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* 호버 시 오버레이 투명도 조절 */
+.guide-card:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+  /* 호버 시 더 어둡게 */
+}
+
+.guide-card:hover {
+  transform: scale(1.05);
+  /* 살짝 커지는 효과 */
+  box-shadow: 0 15px 40px rgba(29, 48, 2, 0.3);
+}
+
+/* ⭐ 카드 위 텍스트 */
+.guide-card h2 {
+  position: relative;
+  z-index: 2;
+  color: #e7e6db;
+  font-family: 'LeferiBaseType-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.guide-card h3 {
+  position: relative;
+  margin-top: 20px;
+  z-index: 2;
+  color: #e7e6db;
+  font-family: 'LeferiBaseType-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.guide-card p {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}

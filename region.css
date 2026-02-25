@@ -1,0 +1,212 @@
+ @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: #e7e6db;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 화면 높이를 최소 100% 확보 */
+    margin: 0;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 200px;
+    /* 양옆 이미지 너비 조절 */
+    height: 100vh;
+    background-image: url("konomi/pattern.png");
+    background-repeat: repeat-y;
+    /* 세로만 반복 */
+    background-size: contain;
+    z-index: -1;
+}
+
+/* 왼쪽 */
+body::before {
+    left: 0;
+}
+
+/* 오른쪽 */
+body::after {
+    right: 0;
+    transform: scaleX(-1);
+    /* 좌우 반전 (원하면 제거 가능) */
+}
+
+/* =====헤더 영역===== */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e7e6db;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.nav-bar {
+    width: 100%;
+    border-top: 1.5px solid #1d3002;
+    border-bottom: 1.5px solid #1d3002;
+    background: #e7e6db;
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px 0;
+    text-decoration: none;
+    color: #666;
+    font-family: 'LeferiBaseType-Regular', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+
+    border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+.nav-item:first-child {
+    border-left: none;
+    border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:hover {
+    color: #1d3002;
+}
+
+
+/* =====지도 영역===== */
+
+body {
+    margin: 0;
+}
+
+.map-wrapper {
+    position: relative;
+    width: 1000px;
+    margin: 100px auto 0 auto;
+}
+
+svg path {
+    fill: #e7e6db;
+    stroke: #1d3002;
+    stroke-width: 0.5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#JP-01,
+#JP-03,
+#JP-15,
+#JP-20,
+#JP-17,
+#JP-18,
+#JP-28,
+#JP-29,
+#JP-34,
+#JP-35,
+#JP-06
+    {
+    fill: #acb69c;
+}
+
+#JP-01:hover,
+#JP-03:hover,
+#JP-15:hover,
+#JP-20:hover,
+#JP-17:hover,
+#JP-18:hover,
+#JP-28:hover,
+#JP-29:hover,
+#JP-34:hover,
+#JP-35:hover,
+#JP-06:hover {
+    fill: #1d3002;
+}
+
+/* 중분류 박스 */
+.info-box {
+    position: absolute;
+    background: #f1f0e4;
+    font-family: 'LeferiBaseType-Regular', sans-serif;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: none;
+    width: 500px;
+}
+
+.info-box h3 {
+    margin-top: 0;
+}
+
+.info-box a {
+    display: block;
+    margin: 5px 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    color: #1d3002;
+}
+
+.map-label {
+    font-weight: 700;
+    fill: #000;
+    transition: 0.2s;
+}
+
+.map-label.active {
+    fill: #ffffff;
+}
+
+#icon-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* 아이콘 때문에 지도가 클릭 안 되는 것 방지 */
+}
+
+.tokkuri-icon {
+    position: absolute;
+    width: 13px;
+    height: auto;
+    transform: translate(-50%, -100%);
+}

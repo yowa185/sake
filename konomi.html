@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>GUIDE</title>
+  <link rel="stylesheet" href="konomi.css" />
+</head>
+
+<body>
+  <!-- 공통 헤더 -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Logo_svg/logo1.png" alt="logo">
+      </a>
+    </div>
+  
+    <nav class="nav-bar">
+      <div class="nav-container">
+        <a href="region.html" class="nav-item active">지역별</a>
+        <a href="brand.html" class="nav-item">브랜드별</a>
+        <a href="guide.html" class="nav-item">GUIDE</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      가격대(¥)
+      <br />
+      <div class="range-wrap">
+        <input type="range" id="priceRange" min="0" max="22" step="1" value="0" />
+        <span id="value">¥2200</span>
+      </div>
+  
+      <div>
+        <hr />
+        아마구치 (甘口) - 달콤한 맛 <br />
+        카라구치 (辛口) - 드라이한 맛<br />
+  
+        <label>
+          <input name="flavor" type="radio" value="아마구치 (甘口)" checked /> 아마구치 (甘口)
+        </label>
+        <label> <input name="flavor" type="radio" value="카라구치 (辛口)" />카라구치 (辛口) </label>
+      </div>
+      <div>
+        <hr />
+        알코올 도수(ABV, Alcohol By Volume)
+        <br/>
+  
+        <label>
+          <input name="alcohol" type="radio" data-level="low" checked />
+          낮음(12~14%)
+        </label>
+  
+        <label>
+          <input name="alcohol" type="radio" data-level="mid" />
+          중간(14~17%)
+        </label>
+  
+        <label>
+          <input name="alcohol" type="radio" data-level="high" />
+          높음(17~19%)
+        </label>
+  
+  
+      </div>
+      <div>
+        <button id="openModal"> 내 취향의 사케는??</button>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>내 취향 사케!</h2>
+            <p>
+              가격대(¥): <span id="resultPrice"></span><br />
+              맛(flavor): <span id="resultFlavor"></span><br />
+              알코올 도수: <span id="resultAlcohol"></span>
+              <!--  결과 상품 출력 영역 -->
+            <div id="resultProducts" class="result-products"></div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  </body>
+  <script src="konomi.js"></script>
+  
+  </html>
+  
+  <!-- 
+  바형식으로 취향 정도 고르기
+  고를수 있는 정보는 도수, 주도/산도
+  주도
+  플러스(
+  ) 방향(높을수록): 당분이 적어 쌉쌀하고 드라이한 맛(가라구치).
+  마이너스(
+  ) 방향(낮을수록): 당분이 많아 달콤한 맛(아마구치).
+  산도
+  높은 산도(
+   이상): 신맛이 강하고 농후하며 묵직한 맛.
+  낮은 산도(
+  ): 부드럽고 경쾌하며 담백한 맛.
+  
+  확인버튼 누르면 결과창 모달로 열어주기
+  검색 결과가 없을 경우 => 준비중입니다.
+  검색 결과가 여러개 일 경우 => 슬라리드로 보여 주기
+  
+  -->

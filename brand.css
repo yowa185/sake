@@ -1,0 +1,427 @@
+ @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: #e7e6db;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 화면 높이를 최소 100% 확보 */
+    margin: 0;
+}
+
+/* =====헤더 영역===== */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e7e6db;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.nav-bar {
+    width: 100%;
+    border-top: 1.5px solid #1d3002;
+    border-bottom: 1.5px solid #1d3002;
+    background: #e7e6db;
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px 0;
+    text-decoration: none;
+    color: #666;
+    font-family: 'LeferiBaseType-Regular', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+
+    border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+.nav-item:first-child {
+    border-left: none;
+    border-right: 1.5px solid #1d3002;
+}
+
+.nav-item:hover {
+    color: #1d3002;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: #e7e6db;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 200px;
+    /* 양옆 이미지 너비 조절 */
+    height: 100vh;
+    background-image: url("konomi/pattern.png");
+    background-repeat: repeat-y;
+    /* 세로만 반복 */
+    background-size: contain;
+    z-index: -1;
+}
+
+/* 왼쪽 */
+body::before {
+    left: 0;
+}
+
+/* 오른쪽 */
+body::after {
+    right: 0;
+    transform: scaleX(-1);
+    /* 좌우 반전 (원하면 제거 가능) */
+}
+
+/* ===== 브랜드 영역 ===== */
+
+.brand-section {
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.brand-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* ===== 브랜드 박스 ===== */
+
+.brand-box {
+    /* 기존 120px -> 180px 정도로 크기 확대 */
+        width: 110%;
+        aspect-ratio: 3 / 4;
+        background: #f1f0e4;
+        border: 1.5px solid #dcdbc8;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px;
+        text-decoration: none;
+        color: #1d3002;
+        font-family: 'LeferiBaseType-Regular', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center 40%;
+}
+
+/* hover 시 글자 숨김 */
+.brand-box:hover {
+    color: transparent;
+    filter: sepia(15%) saturate(366%) hue-rotate(40deg) brightness(30%) contrast(140%);
+}
+
+/* 브랜드별 이미지 지정 */
+.brand-box.dassai {
+    background-image: url("Logo_svg/dassai\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: 70% 40%;
+    background-size: 65%;
+}
+.brand-box.kubota {
+    background-image: url("Logo_svg/kubota\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 80%;
+    background-size: 130%;
+}
+.brand-box.kokuryu {
+    background-image: url("Logo_svg/kokuryu\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: 70%;
+}
+.brand-box.kikuhime {
+    background-image: url("Logo_svg/kikuhime\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: 45%;
+}
+.brand-box.otokoyama {
+    background-image: url("Logo_svg/otokoyama\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 30;
+    background-size: 80%;
+}
+.brand-box.kamotsuru {
+    background-image: url("Logo_svg/kamotsuru\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 80%;
+}
+.brand-box.gokyou {
+    background-image: url("Logo_svg/gokyou\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 40%;
+}
+.brand-box.kyurouemon {
+    background-image: url("Logo_svg/kyurouemon\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 110%;
+}
+.brand-box.harusika {
+    background-image: url("Logo_svg/harusika\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: 45%;
+}
+.brand-box.nambubijin {
+    background-image: url("Logo_svg/nambubijin\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: 35% 35%;
+    background-size: 65%;
+}
+.brand-box.dewazakura {
+    background-image: url("Logo_svg/dewazakura\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: 45%;
+}
+.brand-box.kamoshibito {
+    background-image: url("Logo_svg/kamoshibito\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: center 35%;
+    background-size: 60%;
+}
+.brand-box.takara {
+    background-image: url("Logo_svg/takara\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: 40% 40%;
+    background-size: 75%;
+}
+
+
+
+/* 상세 닷사이 페이지 */
+
+/* 브랜드 상단 영역 */
+.brand-hero {
+    padding: 80px 40px 40px;
+    background: #fefef2;
+    text-align: center;
+}
+
+.brand-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+/* 콘텐츠 영역 */
+.brand-content {
+    padding: 60px 40px;
+}
+
+.brand-info {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.brand-info img {
+    width: 400px;
+    border-radius: 12px;
+}
+
+.brand-info .text {
+    max-width: 500px;
+}
+
+/* 섹션 */
+.product-section {
+    padding: 70px 40px;
+}
+
+/* 제목 */
+.section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* 리스트 그리드 */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* 카드 */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.25s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* 이미지 */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    /* 부드러운 변화 */
+    display: block;
+}
+
+.product-card:hover img {
+    filter: invert(13%) sepia(94%) saturate(461%) hue-rotate(44deg) brightness(96%) contrast(106%);
+}
+
+/* 텍스트 */
+.product-card h3 {
+    font-size: 16px;
+    margin: 12px 14px 4px;
+}
+
+.price {
+    margin: 0 14px 14px;
+    font-weight: bold;
+    color: #8c8c73;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===============================상세페이지================================================*/
+
+/* 상세 전체 영역 */
+.product-detail {
+    padding: 80px 40px;
+}
+
+/* 내부 레이아웃 */
+.detail-wrap {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* 이미지 영역 */
+.detail-image img {
+    width: 420px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* 정보 영역 */
+.detail-info {
+    max-width: 420px;
+}
+
+.detail-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* 정보 테이블 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.info-table th {
+    text-align: left;
+    color: #777;
+    padding: 8px 0;
+    width: 90px;
+}
+
+.info-table td {
+    padding: 8px 0;
+}
+
+/* 가격 */
+.detail-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8c8c73;
+    margin-bottom: 25px;
+}
+
+/* 버튼 */
+.detail-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-btn {
+    background: #8c8c73;
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.back-btn {
+    background: #eee;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 8px;
+    cursor: pointer;
+}

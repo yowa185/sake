@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>DASSAI</title>
+    <link rel="stylesheet" href="../brand.css" />
+</head>
+
+<body>
+    <!-- 공통 헤더 -->
+    <header class="header">
+        <div class="logo">< /div>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html">지역별</a></li>
+                <li><a href="../index.html" class="active">브랜드별</a></li>
+                <li><a href="#">GUIDE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 브랜드 히어로 영역 -->
+    <section id="brandHero" class="brand-hero">
+        <h1>松竹梅</h1>
+        <h5>제조사 다카라주조 / 설립연도 1842년 / 지역 효고</h5>
+        <p>
+            1920년대, 당시 시장에는 다양한 타입의 사케들이 자웅을 겨루고 있었습니다. 이 때 본격적으로 등장한 타카라주조의 쇼치쿠바이(松竹梅)는 크리미한 부드러움과 개성적인 감칠맛의 조화로 비교적 비싼 가격임에도 불구하고
+            당대 술꾼들의 입맛을 사로잡았습니다. 이같은 인기를 바탕으로, 현재는 일본내 생산량 2위의 글로벌 회사가 되었지만, 예부터 마시는 이의 기쁨과 행복을 기원하며 술을 빚어왔던 초심은 그대로입니다. 많은 이들에게
+            부담없이 사랑받는 사케 뿐 아니라, '현대의 기술'과'전통기술'의 완벽한 융합, 그리고 그로 인해 만들어낼 수 있는 최고품질의 사케 단 한병을 위해, 전체가 흰색으로 된 전용 양조장인 '시라카베쿠라(白壁藏)를 새로이
+            지어 오늘도 끊임없는 도전에 매진하고 있습니다. 그 열정과 품질은 전국신주감평회 2003년부터 현재까지 매회 수상하며 입증되고 있습니다.
+        </p>
+    </section>
+
+    <!-- 브랜드 콘텐츠 -->
+    <section id="list" class="product-section">
+        <div class="product-list">
+            <div class="product-card" onclick="showDetail('p1')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/97c4d04562a6b.png" alt="상품1" />
+                <h3>송죽매 다이긴죠</h3>
+                <p class="price">¥4,000</p>
+            </div>
+
+            <div class="product-card" onclick="showDetail('p2')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/1281d0dd27c1a.png" alt="상품2" />
+                <h3>송죽매 토쿠베츠준마이</h3>
+                <p class="price">¥2,500</p>
+            </div>
+
+            <div class="product-card" onclick="showDetail('p3')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/1ef0540186cd3.png" alt="상품3" />
+                <h3>송죽매 준마이</h3>
+                <p class="price">¥2,300</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 페이지들 -->
+    <section id="p1" class="detail hidden product-detail">
+        <div class="detail-wrap">
+            <!-- 왼쪽 : 큰 이미지 -->
+            <div class="detail-image">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/b58cd6cb08a28.png" />
+            </div>
+
+            <!-- 오른쪽 : 정보 -->
+            <div class="detail-info">
+                <h2>송죽매 다이긴죠</h2>
+
+                <table class="info-table">
+                    <tr>
+                        <th>정미율</th>
+                        <td>23%</td>
+                    </tr>
+                    <tr>
+                        <th>도수</th>
+                        <td>16%</td>
+                    </tr>
+                    <tr>
+                        <th>용량</th>
+                        <td>720ml</td>
+                    </tr>
+
+                    <tr>
+                        <th>제품설명</th>
+                        <td>
+                            생산하는 모든 사케가 쥰마이다이긴죠 규격으로 유명한 아사히주조의
+                            걸작! 최고의 주조미(酒造米)인 야마다니시키를 극한의 정미율
+                            23%까지 정미하여, 맛과 향을 그대로 뽑아낸 최고급품입니다. 뛰어난
+                            퀄리티로 발매 직후부터 각종 컨테스트에서 좋은 성적을 올렸으며
+                            현재는 일본내 지자케 시장에서 단연 절대적인 인기와 인지도를
+                            자랑합니다.
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="detail-price">₩29,000</p>
+
+                <div class="detail-buttons">
+                    <button class="buy-btn">구매하기</button>
+                    <button onclick="goBack()" class="back-btn">목록으로</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="p3" class="detail hidden">
+        <h2>상품2 상세</h2>
+        <p>상품2 설명</p>
+        <button onclick="goBack()">목록으로</button>
+    </section>
+    <script src="../brand.js"></script>
+</body>
+
+</html>

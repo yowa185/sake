@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>DASSAI</title>
+    <link rel="stylesheet" href="../brand.css" />
+</head>
+
+<body>
+    <!-- 공통 헤더 -->
+    <header class="header">
+        <div class="logo"></div>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html">지역별</a></li>
+                <li><a href="../index.html" class="active">브랜드별</a></li>
+                <li><a href="#">GUIDE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 브랜드 히어로 영역 -->
+    <section id="brandHero" class="brand-hero">
+        <h1>獺祭</h1>
+        <h5>제조사 아사히(旭)주조 / 설립연도 1948년 / 지역 야마구치</h5>
+        <p>
+            야마구치현 시골 깊숙히 위치한 아사히(旭酒造) 주조는 생산하는 모든 사케를
+            준마이다이긴죠 등급으로 내기 시작하여 일개 작은 양조장에서 일약 일본
+            사케시장의 스타로 떠올랐습니다. 주조미의 제왕, 야마다니시키만을 고집하여
+            빚어내는 닷사이 시리즈는 전통적인 감칠맛과 차분함 위에 단정하나 화려한
+            향과 기품을 섞어내어 수많은 사케 마니아들을 감탄케 하였습니다. 뿐만
+            아니라, 특유의 경쾌한 맛과 터치는 수많은 초심자, 여성들을 사케의 세계로
+            입문시켰습니다. 브랜드네임은'수달의 제사'라는 뜻으로, 수달은 잡은
+            먹잇감을 물가에 늘어놓는 습성이 있습니다. 학자들이 글을 지을때, 수많은
+            자료서적들을 펼쳐 놓는것이 그와 비슷한 모습이라 '닷사이'라 부르는데,
+            좋은 술을 빚기 위해 연구와 노력을 아낌없이 투자하겠다는 신념에서 기인한
+            것입니다.
+        </p>
+    </section>
+
+    <!-- 브랜드 콘텐츠 -->
+    <section id="list" class="product-section">
+        <div class="product-list">
+            <div class="product-card" onclick="showDetail('p1')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/b58cd6cb08a28.png" alt="상품1" />
+                <h3>닷사이 준마이다이긴죠23</h3>
+                <p class="price">₩29,000</p>
+            </div>
+
+            <div class="product-card" onclick="showDetail('p2')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/1f6e90e131905.png" alt="상품2" />
+                <h3>닷사이 준마이다이긴죠39 칸즈쿠리하야부네 나마</h3>
+                <p class="price">₩35,000</p>
+            </div>
+
+            <div class="product-card" onclick="showDetail('p3')">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/1c0367ab5ca22.png" alt="상품3" />
+                <h3>닷사이 준마이다이긴죠 45 스파클링</h3>
+                <p class="price">₩42,000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 페이지들 -->
+    <section id="p1" class="detail hidden product-detail">
+        <div class="detail-wrap">
+            <!-- 왼쪽 : 큰 이미지 -->
+            <div class="detail-image">
+                <img src="https://cdn-optimized.imweb.me/upload/S202306199fc9cf6c2fa3f/b58cd6cb08a28.png" />
+            </div>
+
+            <!-- 오른쪽 : 정보 -->
+            <div class="detail-info">
+                <h2>닷사이 준마이다이긴죠 23</h2>
+
+                <table class="info-table">
+                    <tr>
+                        <th>정미율</th>
+                        <td>23%</td>
+                    </tr>
+                    <tr>
+                        <th>도수</th>
+                        <td>16%</td>
+                    </tr>
+                    <tr>
+                        <th>용량</th>
+                        <td>720ml</td>
+                    </tr>
+                    <tr>
+                        <th>특징</th>
+                        <td>화려한 향과 부드러운 질감</td>
+                    </tr>
+                </table>
+
+                <p class="detail-price">₩29,000</p>
+
+                <div class="detail-buttons">
+                    <button class="buy-btn">구매하기</button>
+                    <button onclick="goBack()" class="back-btn">목록으로</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="p2" class="detail hidden">
+        <h2>상품2 상세</h2>
+        <p>상품2 설명</p>
+        <button onclick="goBack()">목록으로</button>
+    </section>
+
+    <section id="p3" class="detail hidden">
+        <h2>상품2 상세</h2>
+        <p>상품2 설명</p>
+        <button onclick="goBack()">목록으로</button>
+    </section>
+    <script src="../brand.js"></script>
+</body>
+
+</html>

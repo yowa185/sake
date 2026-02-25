@@ -1,0 +1,241 @@
+ @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #e7e6db;
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 화면 높이를 최소 100% 확보 */
+    margin: 0;
+}
+
+/* ------------------ 헤더 ------------------ */
+
+.header {
+  height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e7e6db;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.top-line {
+  border: 0;
+  height: 1.5px;
+  background: #1d3002;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* ------------------ 히어로 ------------------ */
+
+.hero,
+.search-section {
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 핵심: 헤더 높이(100px)를 제외한 나머지 화면을 꽉 채움 */
+    height: calc(100vh - 100px);
+}
+
+.hero {
+  position: relative;
+  height: 600px;
+  background: url("https://images.unsplash.com/photo-1528534696553-76e24393cde5?q=80&w=1859&auto=format&fit=crop") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  padding-top: 280px;
+  height: calc(100vh - 100px);
+}
+
+/* 어둡게 만드는 오버레이 */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* 숫자 높일수록 더 어두워짐 */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 70px;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.bottom-line {
+  border: 0;
+  height: 1px;
+  background: #1d3002;
+  margin: 30px auto 0 auto;
+  align-items: center;
+  width: 95%;
+}
+
+/* ------------------ 검색 영역 ------------------ */
+
+.search-section {
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -250px;
+}
+
+/* 등 이미지 */
+.lantern {
+  position: absolute;
+  width: 150px;
+  margin-top: -180px;
+}
+
+/* 2. 왼쪽 그룹 */
+.lantern.left {
+  left: 20px;
+}
+
+.lantern.left.bottom {
+  left: 140px;
+  z-index: 2;
+}
+
+/* 3. 오른쪽 그룹 */
+.lantern.right {
+  right: 20px;
+}
+
+.lantern.right.bottom {
+  right: 140px;
+  z-index: 2;
+}
+
+/* 검색 박스 */
+
+.search-box {
+  background: #f1f0e4;
+    position: relative;
+    align-self: flex-start;
+    margin-top: 35vh;
+    padding: 30px 30px;
+    border-radius: 30px;
+    text-align: center;
+    width: 40vw;
+    min-width: 500px;
+    max-width: 600px;
+    border: 1px solid #dcdbc8;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    font-family: 'LeferiBaseType-Regular', sans-serif;
+}
+
+/* 토글 버튼 */
+.search-toggle {
+  background: #e7e6db;
+  padding: 20px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(14px, 1.2vw, 20px);
+  border: 1px solid #1d3002;
+  color: #333;
+  }
+
+/* 화살표 애니메이션 */
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+/* 드롭다운 기본 닫힘 */
+.search-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+}
+
+/* 열렸을 때 */
+.search-box.active .search-dropdown {
+  max-height: 350px;
+  margin-top: 30px;
+}
+
+.search-box.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* 링크 스타일 */
+.search-dropdown a {
+  text-decoration: none;
+  color: #919191;
+  padding: 15px 0;
+  width: 100%;
+  transition: color 0.2s;
+  font-size: clamp(14px, 1.1vw, 18px);
+}
+
+.search-dropdown a:hover {
+  color: #1d3002;
+}
+
+.search-dropdown hr {
+  border: none;
+  border-top: 1px solid #1d3002;
+  height: 1px;
+  margin: 15px 0;
+  width: 100%;
+  transform: translateY(0.5px);
+}
+
+/* ------------------ 푸터 ------------------ */
+
+.footer {
+  background: #1d3002;
+  padding: 30px 5%;
+  display: flex;
+  color: white;
+  margin-top: auto;
+  justify-content: flex-start;
+}
+
+.footer .footer-logo img {
+  width: 150px !important;
+  height: auto !important;
+}
