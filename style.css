@@ -29,7 +29,8 @@ body {
 }
 
 .logo img {
-  width: 160px;
+  margin-top: 25px;
+    width: 160px;
     /* 200px -> 160px */
 }
 

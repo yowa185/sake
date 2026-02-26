@@ -1,4 +1,4 @@
- @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/LeferiBaseType-Regular.woff2');
 
 * {
   margin: 0;
@@ -12,38 +12,36 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* 화면 높이를 최소 100% 확보 */
   margin: 0;
+  position: relative;
 }
 
+/* ===== 양옆 패턴 (200px -> 160px 축소) ===== */
+/* 지도가 넓기 때문에 패턴을 줄여야 화면 공간이 확보됩니다 */
 body::before,
 body::after {
   content: "";
   position: fixed;
   top: 0;
-  width: 200px;
-  /* 양옆 이미지 너비 조절 */
+  width: 160px;
+    /* 200px -> 160px */
   height: 100vh;
   background-image: url("konomi/pattern.png");
   background-repeat: repeat-y;
-  /* 세로만 반복 */
   background-size: contain;
   z-index: -1;
 }
 
-/* 왼쪽 */
 body::before {
   left: 0;
 }
 
-/* 오른쪽 */
 body::after {
   right: 0;
   transform: scaleX(-1);
-  /* 좌우 반전 (원하면 제거 가능) */
 }
 
-/* =====헤더 영역===== */
+/* ===== 헤더 영역 (80% 비율 적용) ===== */
 
 .header {
   width: 100%;
@@ -57,13 +55,18 @@ body::after {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  gap: 8px;
+    /* 10px -> 8px */
+    padding-top: 16px;
+    /* 20px -> 16px */
+    padding-bottom: 40px;
+    /* 50px -> 40px */
 }
 
 .logo img {
-  width: 200px;
+  width: 160px;
+    margin-top: 25px;
+    /* 200px -> 160px */
 }
 
 .nav-bar {
@@ -83,14 +86,15 @@ body::after {
 .nav-item {
   flex: 1;
   text-align: center;
-  padding: 20px 0;
+  padding: 16px 0;
+    /* 20px -> 16px */
   text-decoration: none;
   color: #666;
   font-family: 'LeferiBaseType-Regular', sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
+    /* 18px -> 15px */
   transition: color 0.3s ease;
-
   border-right: 1.5px solid #1d3002;
 }
 

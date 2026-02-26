@@ -65,6 +65,7 @@ body::after {
 
 .logo img {
     width: 160px;
+        margin-top: 25px;
         /* 200px -> 160px */
 }
 
